@@ -7,18 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<script src="function.js"></script>
+<style>
+    .box{
+        position:relative;
+    }
+    .son{
+        position:absolute;
+    }
+</style>
 <body>
-<div class="box">
-    <span></span>
-    <span></span>
-    <span></span><span></span><span></span>
+<div class="box"style="position:relative;">
+    <div class="son">this is son</div>
+    <div></div>
+    <div></div>
 </div>
+<div>
+
+</div>
+<div>
+
+</div>
+
 </body>
 </html>
-<script src="12.11.js"></script>
 <script>
-window.onload = function(){
-    let box = document.querySelectorAll('.box');
-    console.log(box);
-}
+$(function(){
+    let box = $('.box')[0];
+    let divs = $('div',box);
+    console.log(divs);
+//    let divs = $('<div>');
+    let son = $('.son')[0];
+    divs.innerText = 'this is div';
+
+    let offset = son.offsetParents();
+    console.log(offset);
+
+
+})
 </script>
+
+
+
+
+
+
+
+

@@ -66,12 +66,51 @@ function prepend(parentNode,child){
     }
 }
 //    扩展方法
+HTMLElement.prototype.append = function(child){
+    this.appendChild(child);
+}
+HTMLElement.prototype.appendTo = function(parentNode){
+   // parentNode.appendTo(this);
+    parentNode.appendChild(this);
+}
+
+
 HTMLElement.prototype.prepend = function(child){
     let firstChild = this.firstElementChild;
     if(firstChild){
         this.insertBefore(child,firstChild);
+        // 在前面插入
     }else{
         this.appendChild(child);
     }
 }
+HTMLElement.prototype.prependTo = function(parentNode){
+    parentNode.prepend(this);
+}
+
+/*
+* box.insert(div)
+* 把div添加到box之前
+* div.insertTo(box)
+* 添加div到box之前
+* insert 插入
+* */
+HTMLElement.prototype.insert = function(node){
+//    this node
+    let parent = this.parentNode;
+    parent.insertBefore(node,this);
+//    this,位置
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
